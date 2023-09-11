@@ -27,6 +27,9 @@
                         <td>
                             <a href="{{ route('supports.show', $support -> id) }}">Veja mais!</a>
                         </td>
+                        <td>
+                            <a href="">Editar Dúvida</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
