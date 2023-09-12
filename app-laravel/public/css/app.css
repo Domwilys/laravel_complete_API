@@ -5,6 +5,101 @@
 }
 
 body {
-    background-color: #022B3A;
+    background-color: #11151C;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#listagem_title {
+    padding-top: 50px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+#criar_duvida {
+    padding-top: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+#criar_duvida:hover {
+    color: gray;
+    transition: 0.8s;
+    text-decoration: underline;
+}
+
+.data_table {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+
+}
+
+.data_table th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 15px;
+}
+
+#veja_mais {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
+
+#veja_mais:hover {
+    color: gray;
+    transition: 0.8s;
+    text-decoration: underline;
+}
+
+#editar {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
+
+#editar:hover {
+    color: gray;
+    transition: 0.8s;
+    text-decoration: underline;
+}
+
+#delete_button {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 19px;
+}
+
+#delete_button button {
+    padding-top: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 19px;
 }
