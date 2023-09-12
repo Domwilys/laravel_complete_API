@@ -14,5 +14,11 @@
             <li>Status: {{ $support -> status }}</li>
             <li>Descrição: {{ $support -> body }}</li>
         </ul>
+        <a href="{{ route('supports.edit', $support -> id) }}">Editar</a>
+        <form action="{{ route('supports.delete', $support -> id) }}" method="POST">
+            @csrf()
+            @method('DELETE')
+            <button type="submit">Deletar</button>
+        </form>
     </body>
 </html>
