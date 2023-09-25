@@ -11,11 +11,19 @@
         <h1 id="create_title">Nova dúvida</h1>
 
         <div class="create_form">
+
+            <div id="error_div">
+                @if ($errors -> any()) 
+                    @foreach($errors -> all() as $error)
+                        <h4 id="error">{{ $error }}</h4>
+                    @endforeach
+                @endif
+            </div>
             <form action="{{ route('supports.store') }}" method="POST">
                 {{-- <input type="hidden" value="{{ csrf_token() }}" name="_token"> --}}
                 @csrf() 
-                <input type="text" placeholder="Assunto" name="subject">
-                <textarea name="body" cols="30" rows="5" placeholder="Descrição"></textarea>
+                <input type="text" placeholder="Assunto" name="subject" value="{{ old('subject') }}">
+                <textarea name="body" cols="30" rows="5" placeholder="Descrição">{{ old('body') }}</textarea>
                 <button type="submit">Enviar</button>
             </form>
         </div>

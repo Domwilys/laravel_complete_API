@@ -10,6 +10,12 @@
     <body>
         <h1 id="edit_title">Editar dúvida {{ $support -> id }}</h1>
 
+        @if ($errors -> any()) 
+            @foreach($errors -> all() as $error)
+                <h4 id="error">{{ $error }}</h4>
+            @endforeach
+        @endif
+
         <div class="edit_form">
             <form action="{{ route('supports.update', $support -> id) }}" method="POST">
                 {{-- <input type="hidden" value="{{ csrf_token() }}" name="_token"> --}}
