@@ -14,7 +14,7 @@ class SupportController extends Controller
 {
 
     public function __construct(protected SupportService $service) {
-
+        
     }
 
     public function index(Request $request) {

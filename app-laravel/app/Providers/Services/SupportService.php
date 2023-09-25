@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Services;
+namespace App\Providers\Services;
 
 use stdClass;
 use App\DTO\CreateSupportDTO;
 use App\DTO\UpdateSupportDTO;
+use App\Repositories\SupportRepositoryInterface;
 
 class SupportService {
 
-    protected $repository;
-
-    public function __construct() {
-
+    public function __construct(protected SupportRepositoryInterface $repository) {
+        
     }
 
     public function getAll(string $filter = null):array {
