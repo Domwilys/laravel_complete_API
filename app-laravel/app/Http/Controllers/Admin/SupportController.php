@@ -14,7 +14,7 @@ class SupportController extends Controller
 {
 
     public function __construct(protected SupportService $service) {
-        
+
     }
 
     public function index(Request $request) {
@@ -23,6 +23,7 @@ class SupportController extends Controller
             totalPerPage: $request -> get('perPage', 30),
             filter: $request -> filter,
         );
+        //dd($supports);
         return view('admin/supports/index', compact('supports'));
     }
 

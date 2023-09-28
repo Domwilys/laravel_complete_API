@@ -10,7 +10,7 @@
     <body>
         <h1 id="listagem_title">Listagem dos suportes</h1>
         <a id="criar_duvida" href="{{ route('supports.create') }}">Criar dúvida</a>
-        
+
 
         <table class="data_table">
             <thead>
@@ -20,28 +20,29 @@
                 <th>Description</th>
             </thead>
             <tbody>
-                @foreach($supports as $support)
+                @foreach($supports -> items() as $support)
                     <tr>
-                        <td>{{ $support['id'] }}</td>
-                        <td>{{ $support['subject'] }}</td>
-                        <td>{{ $support['status'] }}</td>
-                        <td>{{ $support['body'] }}</td>
+                        <td>{{ $support -> id }}</td>
+                        <td>{{ $support -> subject }}</td>
+                        <td>{{ $support -> status }}</td>
+                        <td>{{ $support -> body }}</td>
                         <td>
-                            <a id="veja_mais" href="{{ route('supports.show', $support['id']) }}">Veja mais!</a>
+                            <a id="veja_mais" href="{{ route('supports.show', $support -> id) }}">Veja mais!</a>
                             <br>
-                            <a id="editar" href="{{ route('supports.edit', $support['id']) }}">Editar</a>
-                            <form action="{{ route('supports.delete', $support['id']) }}" method="POST">
+                            <a id="editar" href="{{ route('supports.edit', $support -> id) }}">Editar</a>
+                            <form action="{{ route('supports.delete', $support -> id) }}" method="POST">
                                 @csrf()
                                 @method('DELETE')
                                 <div id="delete_button">
                                     <button type="submit">Deletar</button>
                                 </div>
-                                
+
                             </form>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+        <x-pagination :paginator="$supports" />
     </body>
 </html>
