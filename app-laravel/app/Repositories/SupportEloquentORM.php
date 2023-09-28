@@ -7,6 +7,8 @@ use stdClass;
 use App\Repositories\SupportRepositoryInterface;
 use App\DTO\{CreateSupportDTO, UpdateSupportDTO};
 use App\Models\Support;
+use App\Repositories\PaginationPresenter;
+use App\repositories\PaginationInterface;
 
 class SupportEloquentORM implements SupportRepositoryInterface {
 
@@ -21,9 +23,11 @@ class SupportEloquentORM implements SupportRepositoryInterface {
                 $querry -> where('subject', $filter);
                 $querry -> where('body', 'like', '%{$filter}%');
             }
-        }) -> paginate($totalPerPage, ['*'], 'page', $page) -> toArray();
+        }) -> paginate($totalPerPage, ['*'], 'page', $page);
 
-        dd($result);
+        //dd((new PaginationPresenter($result)) -> total());
+
+        return new PaginationPresenter($result);
 
     }
 
