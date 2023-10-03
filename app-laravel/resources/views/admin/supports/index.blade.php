@@ -43,6 +43,6 @@
                 @endforeach
             </tbody>
         </table>
-        <x-pagination :paginator="$supports" />
+        <x-pagination :paginator="$supports" :appends="$filters"/>
     </body>
 </html>

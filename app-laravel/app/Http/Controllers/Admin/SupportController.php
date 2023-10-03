@@ -23,8 +23,8 @@ class SupportController extends Controller
             totalPerPage: $request -> get('perPage', 30),
             filter: $request -> filter,
         );
-        //dd($supports);
-        return view('admin/supports/index', compact('supports'));
+        $filters = ['filter' => $request -> get('filter', '')];
+        return view('admin/supports/index', compact('supports', 'filters'));
     }
 
     public function show(string $id) {

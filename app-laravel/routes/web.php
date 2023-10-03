@@ -3,6 +3,11 @@
 use App\Http\Controllers\RenderControllers\RenderController;
 use App\Http\Controllers\Admin\{SupportController};
 use Illuminate\Support\Facades\Route;
+use App\Enums\SupportStatus;
+
+Route::get('/test', function() {
+    dd(array_column(SupportStatus::cases(), 'name'));
+});
 
 Route::delete('/supports/{id}', [SupportController::class, 'delete']) -> name('supports.delete');
 Route::put('/supports/{id}', [SupportController::class, 'update']) -> name('supports.update');
