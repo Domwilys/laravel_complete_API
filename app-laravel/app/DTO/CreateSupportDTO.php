@@ -3,6 +3,7 @@
 namespace App\DTO;
 
 use App\Http\Requests\StoreUpdateSupportRequest;
+use App\Enums\SupportStatus;
 
 class CreateSupportDTO {
 
@@ -16,7 +17,7 @@ class CreateSupportDTO {
             "Ativo",
             $request -> body
 
-        );  
+        );
 
     }
 

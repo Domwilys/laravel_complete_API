@@ -12,9 +12,9 @@
 
 //         foreach (self::cases() as $status) {
 
-//             if($name === $status -> name) {
+//             if($name === $status->name) {
 
-//                 return $status -> value;
+//                 return $status->value;
 
 //             }
 

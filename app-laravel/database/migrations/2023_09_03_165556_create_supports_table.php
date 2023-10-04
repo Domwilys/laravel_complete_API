@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('supports', function (Blueprint $table) {
             $table->id();
             $table->string('subject');
-            $table->enum('status', ['Ativo', 'Pendente', 'Concluído']);
+            $table->enum('status', ["Ativo", "Pendente", "Concluído"]);
             $table->text('body');
             $table->timestamps();
         });
