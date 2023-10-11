@@ -9,6 +9,7 @@ use App\DTO\CreateSupportDTO;
 use App\DTO\UpdateSupportDTO;
 use App\Http\Requests\StoreUpdateSupportRequest;
 use App\Http\Resources\SupportResource;
+use App\Adapters\ApiAdapter;
 
 class SupportApiController extends Controller
 {
@@ -30,16 +31,7 @@ class SupportApiController extends Controller
 
         );
 
-        return SupportResource::collection(collect($supports -> items())) -> additional([
-            'meta' => [
-                'total' => $supports -> total(),
-                'currentPage' => $supports -> currentPage(),
-                'nextPage' => $supports -> nextPage(),
-                'previusPage' => $supports -> previusPage(),
-                'isFirstPage' => $supports -> isFirstPage(),
-                'isLastPage' => $supports -> isLastPage(),
-            ]
-        ]);
+        return ApiAdapter::toJson($supports);
 
     }
 

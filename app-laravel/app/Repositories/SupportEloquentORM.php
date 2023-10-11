@@ -20,8 +20,8 @@ class SupportEloquentORM implements SupportRepositoryInterface {
 
         $result =  $this -> model -> where(function ($querry) use ($filter) {
             if($filter) {
-                $querry -> where('subject', $filter);
-                $querry -> where('body', 'like', '%{$filter}%');
+                $querry -> orWhere('subject', 'like', "%{$filter}%");
+                $querry -> orWhere('body', 'like', "%{$filter}%");
             }
         }) -> paginate($totalPerPage, ['*'], 'page', $page);
 
@@ -36,7 +36,7 @@ class SupportEloquentORM implements SupportRepositoryInterface {
         return $this -> model -> where(function ($querry) use ($filter) {
             if($filter) {
                 $querry -> where('subject', $filter);
-                $querry -> where('body', 'like', '%{$filter}%');
+                $querry -> where('body', 'like', "%{$filter}%");
             }
         }) -> get() -> toArray();
 
