@@ -4,13 +4,22 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="{{ asset('css/show.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('css/show.css') }}"> --}}
         <title>Show one data by id</title>
     </head>
     <body>
-        <h1 id="detalhes_title">Detalhes da dúvida {{ $support -> id }}</h1>
 
-        <div class="detalhes">
+        @extends('admin/layouts/app')
+
+        @section('header')
+            <h1 class="text-3xl text-black-500 flex justify-center">Detalhes da dúvida {{ $support -> id }}</h1>
+        @endsection
+
+        @section('content')
+            @include('admin.supports.partials.showContent', compact('support'))
+        @endsection
+
+        {{-- <div class="detalhes">
             <ul>
                 <li>Assunto: {{ $support -> subject }}</li>
                 <li>Status: {{ $support -> status }}</li>
@@ -23,7 +32,7 @@
             @method('DELETE')
             <div id="delete_button">
                 <button type="submit">Deletar</button>
-            </div>
+            </div> --}}
         </form>
     </body>
 </html>

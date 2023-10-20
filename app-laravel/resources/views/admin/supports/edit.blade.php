@@ -4,23 +4,30 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="{{ asset('css/edit.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('css/edit.css') }}"> --}}
         <title>Edit data</title>
     </head>
     <body>
-        <h1 id="edit_title">Editar dúvida {{ $support -> id }}</h1>
 
-        <x-alert/>
+        @extends('admin/layouts/app')
 
-        <div class="edit_form">
-            <form action="{{ route('supports.update', $support -> id) }}" method="POST">
-                {{-- <input type="hidden" value="{{ csrf_token() }}" name="_token"> --}}
-                {{-- <input type="text" value="PUT" name="_method"> --}}
-                @method('PUT')
-                @include('admin.supports.partials.form', [
-                    'subject' => $support
-                ])
-            </form>
-        </div>
+        @section('header')
+            <h1 class="text-3xl text-black-500 flex justify-center">Editar dúvida {{ $support -> id }}</h1>
+        @endsection
+
+        @section('content')
+            <x-alert/>
+
+            <div class="edit_form">
+                <form action="{{ route('supports.update', $support -> id) }}" method="POST">
+                    {{-- <input type="hidden" value="{{ csrf_token() }}" name="_token"> --}}
+                    {{-- <input type="text" value="PUT" name="_method"> --}}
+                    @method('PUT')
+                    @include('admin.supports.partials.form', [
+                        'subject' => $support
+                    ])
+                </form>
+            </div>
+        @endsection
     </body>
 </html>

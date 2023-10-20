@@ -46,7 +46,7 @@ class SupportController extends Controller
         // $support->create($data);
 
         $this -> service -> new(CreateSupportDTO::makeFromRequest($request));
-        return redirect()->route('supports.index');
+        return redirect()->route('supports.index') -> with('message', 'Data registered successfully!');
     }
 
     public function edit(string $id) {
@@ -82,7 +82,7 @@ class SupportController extends Controller
 
         // $support -> update($request -> validated());
 
-        return redirect() -> route('supports.index');
+        return redirect() -> route('supports.index') -> with('message', 'Data updated successfully!');
     }
 
     public function delete(string $id) {
