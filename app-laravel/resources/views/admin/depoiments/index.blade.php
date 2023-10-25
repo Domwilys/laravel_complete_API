@@ -11,15 +11,15 @@
 
         @extends('admin/layouts/app')
 
-        @section('title', 'Supports')
+        @section('title', 'Depoiments')
 
         @section('header')
-            @include('admin.supports.partials.header', compact('supports'))
+            @include('admin.depoiments.partials.header', compact('depoiments'))
         @endsection
 
         @section('content')
 
-            @include('admin.supports.partials.content', compact('supports'))
+            @include('admin.depoiments.partials.content', compact('depoiments'))
 
             {{-- <table class="data_table">
                 <thead>
@@ -52,7 +52,7 @@
                     @endforeach
                 </tbody>
             </table> --}}
-            <x-pagination :paginator="$supports" :appends="$filters"/>
+            <x-pagination :paginator="$depoiments" :appends="$filters"/>
 
         @endsection
     </body>

@@ -18,7 +18,7 @@
         @extends('admin/layouts/app')
 
         @section('header')
-            <h1 class="text-3xl text-black-500 flex justify-center">Nova dúvida</h1>
+            <h1 class="text-3xl text-black-500 flex justify-center">Novo Depoimento</h1>
         @endsection
 
         @section('content')
@@ -26,9 +26,9 @@
             <x-alert/>
 
             <div class="create_form">
-                <form action="{{ route('supports.store') }}" method="POST">
+                <form action="{{ route('depoiments.store') }}" method="POST">
                     {{-- <input type="hidden" value="{{ csrf_token() }}" name="_token"> --}}
-                    @include('admin.supports.partials.form')
+                    @include('admin.depoiments.partials.form')
                 </form>
             </div>
 

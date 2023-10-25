@@ -12,11 +12,11 @@
         @extends('admin/layouts/app')
 
         @section('header')
-            <h1 class="text-3xl text-black-500 flex justify-center">Detalhes da dúvida {{ $support -> id }}</h1>
+            <h1 class="text-3xl text-black-500 flex justify-center">Detalhes do depoimento {{ $depoiment -> id }}</h1>
         @endsection
 
         @section('content')
-            @include('admin.supports.partials.showContent', compact('support'))
+            @include('admin.depoiments.partials.showContent', compact('depoiment'))
         @endsection
 
         {{-- <div class="detalhes">
