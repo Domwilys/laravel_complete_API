@@ -2,6 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\SupportApiController;
+use App\Http\Controllers\Api\DepoimentApiController;
 
-Route::apiResource('/supports', SupportApiController::class);
+Route::apiResource('/depoiments', DepoimentApiController::class);
