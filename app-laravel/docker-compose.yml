@@ -10,7 +10,7 @@ services:
         restart: unless-stopped
         working_dir: /var/www/
         ports:
-          - "8888:80"
+          - "8989:80"
         volumes:
             - ./:/var/www
         depends_on:
