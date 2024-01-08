@@ -1,5 +1,8 @@
 <div class="sm:flex sm:items-center sm:justify-between">
     <div>
+        <a class="inline-block align-baseline font-bold text-sm text-black" href="{{ route('dashboard') }}">
+            Voltar
+            </a>
         <div class="flex items-center gap-x-3">
             <h1 class="text-lg text-black-500">Depoiments</h1>
 

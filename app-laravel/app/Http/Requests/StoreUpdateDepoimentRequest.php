@@ -27,7 +27,6 @@ class StoreUpdateDepoimentRequest extends FormRequest
                 'required',
                 'min:1',
                 'max:100',
-                'unique:depoiments',
             ],
             'email' => [
                 'required',

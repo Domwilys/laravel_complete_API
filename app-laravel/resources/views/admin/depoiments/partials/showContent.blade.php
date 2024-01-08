@@ -14,7 +14,21 @@
                     <h1 class="px-4 py-2 text-xl font-medium whitespace-nowrap dark:text-white">Nome: {{ $depoiment -> nome }}</h1>
                     <h1 class="px-4 py-2 text-xl font-medium whitespace-nowrap dark:text-white">Email: {{ $depoiment -> email }}</h1>
                     <h1 class="px-4 py-2 text-xl font-medium whitespace-nowrap dark:text-white">Ocupação: {{ $depoiment -> ocupacao }}</h1>
-                    <h1 class="px-4 py-2 text-xl font-medium whitespace-nowrap dark:text-white">Depoimento: {{ $depoiment -> depoimento }}</h1>
+                    {{-- <h1 class="px-4 py-2 text-xl font-medium whitespace-nowrap dark:text-white">Depoimento: {{ $depoiment -> depoimento }}</h1> --}}
+                    <div class="flex flex-wrap justify-left">
+                        <div class="px-4 py-2">
+                            <div class="flex rounded-lg h-full flex-col">
+                                <div class="flex items-center mb-3">
+                                    <h2 class="text-white text-xl font-medium">Depoimento:</h2>
+                                </div>
+                                <div class="flex flex-col justify-between flex-grow w-full">
+                                    <p class="leading-relaxed text-xl text-white">
+                                        {{ $depoiment -> depoimento }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <h1 class="px-4 py-2 text-xl font-medium whitespace-nowrap dark:text-white">Criado em: {{ $depoiment -> created_at }}</h1>
                     <h1 class="px-4 py-2 text-xl font-medium whitespace-nowrap dark:text-white">Atualizado em: {{ $depoiment -> updated_at }}</h1>
                 </div>

@@ -21,37 +21,6 @@
 
             @include('admin.depoiments.partials.content', compact('depoiments'))
 
-            {{-- <table class="data_table">
-                <thead>
-                    <th>ID</th>
-                    <th>Assunto</th>
-                    <th>Status</th>
-                    <th>Description</th>
-                </thead>
-                <tbody>
-                    @foreach($supports -> items() as $support)
-                        <tr>
-                            <td>{{ $support -> id }}</td>
-                            <td>{{ $support -> subject }}</td>
-                            <td>{{ $support -> status }}</td>
-                            <td>{{ $support -> body }}</td>
-                            <td>
-                                <a id="veja_mais" href="{{ route('supports.show', $support -> id) }}">Veja mais!</a>
-                                <br>
-                                <a id="editar" href="{{ route('supports.edit', $support -> id) }}">Editar</a>
-                                <form action="{{ route('supports.delete', $support -> id) }}" method="POST">
-                                    @csrf()
-                                    @method('DELETE')
-                                    <div id="delete_button">
-                                        <button type="submit">Deletar</button>
-                                    </div>
-
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table> --}}
             <x-pagination :paginator="$depoiments" :appends="$filters"/>
 
         @endsection
